@@ -11,20 +11,6 @@ import Color
 import PathTools
 import GraphicsTools
 
-/**
- - TODO: Refactor as inits to and from degrees / radians
- */
-internal func DEGREES_TO_RADIANS(_ degrees: CGFloat) -> CGFloat {
-    return degrees / 180.0 * CGFloat(M_PI)
-}
-
-/**
- - TODO: Refactor as inits to and from degrees / radians
- */
-internal func RADIANS_TO_DEGREES(_ radians: CGFloat) -> CGFloat {
-    return radians * (180.0 / CGFloat(M_PI))
-}
-
 public class Dial: CALayer, CompositeShapeType {
     
     // Value between 0 and 1
@@ -37,9 +23,11 @@ public class Dial: CALayer, CompositeShapeType {
         
         didSet {
             guard value <= 1.0 else { return }
-            // next: 0...1 -> range
+            // next: 0...1 -> range (in the case its not 0...360)
             
             let degrees = CGFloat(value) * 360
+            
+            // TODO: Refactor to GraphicsTools ------------------>
             var transform = CGAffineTransform.identity
             transform = transform.translatedBy(x: frame.width / 2, y: frame.height / 2)
             transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
@@ -48,6 +36,7 @@ public class Dial: CALayer, CompositeShapeType {
             CATransaction.setDisableActions(true)
             layer.setAffineTransform(transform)
             CATransaction.setDisableActions(false)
+            // <--------------------------------------------------
         }
     }
     
@@ -103,4 +92,19 @@ public class Dial: CALayer, CompositeShapeType {
         shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
         layer.addSublayer(shape)
     }
+}
+
+// FIXME: This should remain private, removed when rotation is refactored out
+/**
+ - TODO: Refactor as inits to and from degrees / radians
+ */
+internal func DEGREES_TO_RADIANS(_ degrees: CGFloat) -> CGFloat {
+    return degrees / 180.0 * CGFloat(M_PI)
+}
+
+/**
+ - TODO: Refactor as inits to and from degrees / radians
+ */
+internal func RADIANS_TO_DEGREES(_ radians: CGFloat) -> CGFloat {
+    return radians * (180.0 / CGFloat(M_PI))
 }
