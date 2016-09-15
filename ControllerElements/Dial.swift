@@ -15,8 +15,7 @@ public class Dial: CALayer, CompositeShapeType {
     
     // Value between 0 and 1
     public let operationRange: Range<Float> = 0 ..< 1
-    
-    
+
     private var layer: CALayer = CALayer()
     
     public var value: Float = 0.0 {
