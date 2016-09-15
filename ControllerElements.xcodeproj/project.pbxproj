@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0748D2B81D8B33E300EF65A2 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748D2B71D8B33E300EF65A2 /* Dial.swift */; };
+		0748D2B91D8B33E300EF65A2 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748D2B71D8B33E300EF65A2 /* Dial.swift */; };
+		0AF6BE64880B86B9B7A9919E /* Color.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF026CBA4A31BDC0E851097 /* Color.framework */; };
 		0E2D285CAF3D49EF8307A692 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54956BF34C708C1499DBDE2 /* Foundation.framework */; };
+		2A8174721566A65073DC599D /* GraphicsTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9107F48B7A504C1A2F22D550 /* GraphicsTools.framework */; };
+		2F85403B485474CCDFCDEFB6 /* GraphicsTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124BFCB75DA766B022616B0C /* GraphicsTools.framework */; };
 		62510BC40B2B63452ACC6B33 /* ControllerElements.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05F99510C981B33882BF9DAF /* ControllerElements.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6454AB5C3F92F2C2BFF058BC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AF3C1F191AB41BF9B8D252 /* Cocoa.framework */; };
 		7EBB6CB458630729591475BA /* ControllerElements.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE1A3475F7B10B028E58F74D /* ControllerElements.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -15,6 +20,9 @@
 		AF55430A2EB9E468D4DB206A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AF3C1F191AB41BF9B8D252 /* Cocoa.framework */; };
 		BFBC83D9EF0FCF3AD33B86D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54956BF34C708C1499DBDE2 /* Foundation.framework */; };
 		D96CBA3536F70369466A4BF0 /* ControllerElements.h in Headers */ = {isa = PBXBuildFile; fileRef = C6217B827475008D216F1826 /* ControllerElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6102258280B1A9F92F057A6 /* PathTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B350030EB0FD3A999274CD6 /* PathTools.framework */; };
+		E78D7724129CCDB69ECF6E49 /* Color.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF286688C476D74ED91B45A /* Color.framework */; };
+		FA0063E963D44B012159ECA6 /* PathTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31483EC6C219C80BC6B26436 /* PathTools.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +67,20 @@
 
 /* Begin PBXFileReference section */
 		05F99510C981B33882BF9DAF /* ControllerElements.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = ControllerElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0748D2B71D8B33E300EF65A2 /* Dial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dial.swift; path = ControllerElements/Dial.swift; sourceTree = "<group>"; };
+		0B350030EB0FD3A999274CD6 /* PathTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathTools.framework; path = Carthage/Build/iOS/PathTools.framework; sourceTree = "<group>"; };
+		0FF026CBA4A31BDC0E851097 /* Color.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Color.framework; path = Carthage/Build/iOS/Color.framework; sourceTree = "<group>"; };
 		0FF96B84556B55CAAF50DBE7 /* ControllerElementsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControllerElementsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		124BFCB75DA766B022616B0C /* GraphicsTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsTools.framework; path = Carthage/Build/iOS/GraphicsTools.framework; sourceTree = "<group>"; };
+		31483EC6C219C80BC6B26436 /* PathTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathTools.framework; path = Carthage/Build/Mac/PathTools.framework; sourceTree = "<group>"; };
 		3FEBA7D6807DE4941A0331BD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = ControllerElementsTests/Info.plist; sourceTree = "<group>"; };
 		43AF3C1F191AB41BF9B8D252 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		635EE599CD68C44AC228D0E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = ControllerElements/Info.plist; sourceTree = "<group>"; };
+		9107F48B7A504C1A2F22D550 /* GraphicsTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsTools.framework; path = Carthage/Build/Mac/GraphicsTools.framework; sourceTree = "<group>"; };
 		99D97796B4DA04F2C0DF5CFE /* ControllerElements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ControllerElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25F1B0D21C749DE8B3C2875 /* ControllerElementsMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControllerElementsMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40794E5DC364DB2608E717F /* ControllerElements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ControllerElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACF286688C476D74ED91B45A /* Color.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Color.framework; path = Carthage/Build/Mac/Color.framework; sourceTree = "<group>"; };
 		B54956BF34C708C1499DBDE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C6217B827475008D216F1826 /* ControllerElements.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ControllerElements.h; path = ControllerElements/ControllerElements.h; sourceTree = "<group>"; };
 		DE1A3475F7B10B028E58F74D /* ControllerElements.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = ControllerElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +92,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF55430A2EB9E468D4DB206A /* Cocoa.framework in Frameworks */,
+				E78D7724129CCDB69ECF6E49 /* Color.framework in Frameworks */,
+				2A8174721566A65073DC599D /* GraphicsTools.framework in Frameworks */,
+				FA0063E963D44B012159ECA6 /* PathTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +103,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBC83D9EF0FCF3AD33B86D4 /* Foundation.framework in Frameworks */,
+				0AF6BE64880B86B9B7A9919E /* Color.framework in Frameworks */,
+				2F85403B485474CCDFCDEFB6 /* GraphicsTools.framework in Frameworks */,
+				E6102258280B1A9F92F057A6 /* PathTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				B54956BF34C708C1499DBDE2 /* Foundation.framework */,
+				0FF026CBA4A31BDC0E851097 /* Color.framework */,
+				124BFCB75DA766B022616B0C /* GraphicsTools.framework */,
+				0B350030EB0FD3A999274CD6 /* PathTools.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -144,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				2B53B54886E9874FF65904C5 /* Supporting Files */,
+				0748D2B71D8B33E300EF65A2 /* Dial.swift */,
 			);
 			name = ControllerElements;
 			sourceTree = "<group>";
@@ -152,6 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				43AF3C1F191AB41BF9B8D252 /* Cocoa.framework */,
+				ACF286688C476D74ED91B45A /* Color.framework */,
+				9107F48B7A504C1A2F22D550 /* GraphicsTools.framework */,
+				31483EC6C219C80BC6B26436 /* PathTools.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
@@ -215,6 +243,7 @@
 				96159857A359E24C90DDEBF0 /* Sources */,
 				99DAC91BEB4E416EF2F5EFC2 /* Frameworks */,
 				18649C2DF15769B2181DF194 /* Headers */,
+				E5C00B0BCB042F4DEF9F804F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +279,7 @@
 				7481496345816775F04EB8B1 /* Sources */,
 				507B7F565475BC4EFE0E62A9 /* Frameworks */,
 				0F4B743BAF6F3F91EA77EBF4 /* Headers */,
+				BAFEAF7265B83E218B53D52C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -286,6 +316,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					3C7BED8A22B4CE1621F482B6 = {
+						LastSwiftMigration = 0800;
+					};
+					6A22FC25D929F4E992EABA60 = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 8016857B7C948811D0E76009 /* Build configuration list for PBXProject "ControllerElements" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -307,6 +345,41 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BAFEAF7265B83E218B53D52C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Color.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/GraphicsTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PathTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		E5C00B0BCB042F4DEF9F804F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Color.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GraphicsTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PathTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5BEA12F7EE86951D7611068D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -319,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0748D2B91D8B33E300EF65A2 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0748D2B81D8B33E300EF65A2 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -402,6 +478,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ControllerElements/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -411,6 +488,7 @@
 				PRODUCT_NAME = ControllerElements;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -463,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -472,6 +551,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ControllerElements/Info.plist;
@@ -482,6 +562,7 @@
 				PRODUCT_NAME = ControllerElements;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -490,6 +571,7 @@
 		9F80C93C4520FFECD3C95632 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -504,6 +586,7 @@
 		A0A97F792796A534110806D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -519,6 +602,7 @@
 		A552E7021C1801E66B65F2DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -535,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -543,6 +628,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ControllerElements/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -552,6 +638,8 @@
 				PRODUCT_NAME = ControllerElements;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -562,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -571,6 +660,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ControllerElements/Info.plist;
@@ -581,6 +671,8 @@
 				PRODUCT_NAME = ControllerElements;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -589,6 +681,7 @@
 		FDAFAFD1C8D3423047E617AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
