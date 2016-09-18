@@ -36,6 +36,9 @@ public class Dial: CALayer, CompositeShapeType {
     public func createComponents() {
         addOutlineCircle()
         addLine()
+        
+        // refactor -> configureLayer()
+        layer.frame = self.bounds
         addSublayer(layer)
     }
     
@@ -55,6 +58,16 @@ public class Dial: CALayer, CompositeShapeType {
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func ramp(to value: Float, over duration: Double) {
+        let degrees = CGFloat(value) * 360
+        let startRotation = layer.value(forKeyPath: "transform.rotation")
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.duration = duration
+        animation.fromValue = startRotation
+        animation.toValue = CGFloat(startRotation as! Float) + DEGREES_TO_RADIANS(degrees)
+        layer.add(animation, forKey: "transform.rotation")
     }
     
     // add circle
@@ -82,17 +95,19 @@ public class Dial: CALayer, CompositeShapeType {
     }
     
     private func updateRotation(value: Float) {
-        let degrees = CGFloat(value) * 360
         
-        // TODO: Refactor to GraphicsTools ------------------>
-        var transform = CGAffineTransform.identity
-        transform = transform.translatedBy(x: frame.width / 2, y: frame.height / 2)
-        transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
-        transform = transform.translatedBy(x: -frame.width / 2, y: -frame.height / 2)
+        let degrees = CGFloat(value) * 360
+        let transform = rotationTransform(degrees: degrees)
         
         CATransaction.setDisableActions(true)
         layer.setAffineTransform(transform)
         CATransaction.setDisableActions(false)
+    }
+    
+    private func rotationTransform(degrees: CGFloat) -> CGAffineTransform {
+        var transform = CGAffineTransform.identity
+        transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
+        return transform
     }
 }
 
