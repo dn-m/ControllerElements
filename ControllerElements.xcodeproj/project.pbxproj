@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074547991D8D906000346242 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074547981D8D906000346242 /* Slider.swift */; };
+		0745479A1D8D906000346242 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074547981D8D906000346242 /* Slider.swift */; };
 		0748D2B81D8B33E300EF65A2 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748D2B71D8B33E300EF65A2 /* Dial.swift */; };
 		0748D2B91D8B33E300EF65A2 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748D2B71D8B33E300EF65A2 /* Dial.swift */; };
 		0AF6BE64880B86B9B7A9919E /* Color.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF026CBA4A31BDC0E851097 /* Color.framework */; };
@@ -67,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		05F99510C981B33882BF9DAF /* ControllerElements.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = ControllerElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		074547981D8D906000346242 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slider.swift; path = ControllerElements/Slider.swift; sourceTree = "<group>"; };
 		0748D2B71D8B33E300EF65A2 /* Dial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dial.swift; path = ControllerElements/Dial.swift; sourceTree = "<group>"; };
 		0B350030EB0FD3A999274CD6 /* PathTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathTools.framework; path = Carthage/Build/iOS/PathTools.framework; sourceTree = "<group>"; };
 		0FF026CBA4A31BDC0E851097 /* Color.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Color.framework; path = Carthage/Build/iOS/Color.framework; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 			children = (
 				2B53B54886E9874FF65904C5 /* Supporting Files */,
 				0748D2B71D8B33E300EF65A2 /* Dial.swift */,
+				074547981D8D906000346242 /* Slider.swift */,
 			);
 			name = ControllerElements;
 			sourceTree = "<group>";
@@ -392,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0745479A1D8D906000346242 /* Slider.swift in Sources */,
 				0748D2B91D8B33E300EF65A2 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074547991D8D906000346242 /* Slider.swift in Sources */,
 				0748D2B81D8B33E300EF65A2 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

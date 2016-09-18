@@ -16,28 +16,19 @@ public class Dial: CALayer, CompositeShapeType {
     // Value between 0 and 1
     public let operationRange: Range<Float> = 0 ..< 1
 
-    private var layer: CALayer = CALayer()
+    private let layer = CALayer()
     
     public var value: Float = 0.0 {
         
+        // TODO: refactor this as method: updateRotation()
         didSet {
-            guard value <= 1.0 else { return }
-            // next: 0...1 -> range (in the case its not 0...360)
-            
-            let degrees = CGFloat(value) * 360
-            
-            // TODO: Refactor to GraphicsTools ------------------>
-            var transform = CGAffineTransform.identity
-            transform = transform.translatedBy(x: frame.width / 2, y: frame.height / 2)
-            transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
-            transform = transform.translatedBy(x: -frame.width / 2, y: -frame.height / 2)
-            
-            CATransaction.setDisableActions(true)
-            layer.setAffineTransform(transform)
-            CATransaction.setDisableActions(false)
-            // <--------------------------------------------------
+            guard value >= 0.0 && value <= 1.0 else { return }
+            updateRotation(value: value)
         }
     }
+    
+    /// Components that need to built and commited
+    public var components: [CALayer] = []
     
     /**
      Create the components contained herein.
@@ -47,11 +38,6 @@ public class Dial: CALayer, CompositeShapeType {
         addLine()
         addSublayer(layer)
     }
-
-    /// Components that need to built and commited
-    public var components: [CALayer] = []
-
-    //public let frame: CGRect
     
     public func makeFrame() -> CGRect {
         return CGRect.zero
@@ -89,6 +75,20 @@ public class Dial: CALayer, CompositeShapeType {
         shape.lineWidth = 1
         shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
         layer.addSublayer(shape)
+    }
+    
+    private func updateRotation(value: Float) {
+        let degrees = CGFloat(value) * 360
+        
+        // TODO: Refactor to GraphicsTools ------------------>
+        var transform = CGAffineTransform.identity
+        transform = transform.translatedBy(x: frame.width / 2, y: frame.height / 2)
+        transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
+        transform = transform.translatedBy(x: -frame.width / 2, y: -frame.height / 2)
+        
+        CATransaction.setDisableActions(true)
+        layer.setAffineTransform(transform)
+        CATransaction.setDisableActions(false)
     }
 }
 
