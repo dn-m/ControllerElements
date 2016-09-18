@@ -262,6 +262,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "ControllerElementsDemo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.ControllerElementsDemo-iOS";
@@ -275,6 +276,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "ControllerElementsDemo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.ControllerElementsDemo-iOS";
@@ -302,6 +304,7 @@
 				07C7E06E1D8B4A5A00687996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
