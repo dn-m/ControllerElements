@@ -43,6 +43,10 @@ public class Dial: CALayer, CompositeShapeType {
         return CGRect.zero
     }
     
+    override public init() {
+        super.init()
+    }
+    
     public init(frame: CGRect) {
         super.init()
         self.frame = frame
