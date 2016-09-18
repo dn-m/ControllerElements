@@ -28,7 +28,7 @@ public class Slider: CALayer, CompositeShapeType {
         }
     }
     
-    public override init() {
+    public required override init() {
         super.init()
     }
     

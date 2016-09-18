@@ -43,7 +43,7 @@ public class Dial: CALayer, CompositeShapeType {
         return CGRect.zero
     }
     
-    override public init() {
+    override required public init() {
         super.init()
     }
     
