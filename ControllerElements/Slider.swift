@@ -36,6 +36,7 @@ public class Slider: CALayer, ContinuousController, CompositeShapeType {
         super.init()
         self.frame = frame
         createComponents()
+        updateIndicatorPosition(value: value)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -67,9 +68,10 @@ public class Slider: CALayer, ContinuousController, CompositeShapeType {
         indicator = shape
     }
     
+    // TODO: Consider making this completely instance-level state, or completely local- !
     private func updateIndicatorPosition(value: Float) {
         CATransaction.setDisableActions(true)
-        indicator.frame.origin.y = CGFloat(value) * frame.height
+        indicator.frame.origin.y = CGFloat(1 - value) * frame.height
         CATransaction.setDisableActions(false)
     }
 
