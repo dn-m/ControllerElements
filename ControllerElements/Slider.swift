@@ -12,7 +12,7 @@ import PathTools
 import GraphicsTools
 
 // TODO: CompositeShapeType
-public class Slider: CALayer, CompositeShapeType {
+public class Slider: CALayer, ContinuousController, CompositeShapeType {
     
     private let layer = CALayer()
     
