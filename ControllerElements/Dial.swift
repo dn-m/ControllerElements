@@ -11,12 +11,12 @@ import Color
 import PathTools
 import GraphicsTools
 
-public class Dial: CALayer, ContinuousController, CompositeShapeType {
+public class Dial: CALayer, CompositeShapeType {
     
     // Value between 0 and 1
     public let operationRange: Range<Float> = 0 ..< 1
 
-    private let layer = CALayer()
+    fileprivate let layer = CALayer()
     
     public var value: Float = 0.0 {
         
@@ -60,18 +60,6 @@ public class Dial: CALayer, ContinuousController, CompositeShapeType {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func ramp(to value: Float, over duration: Double = 0) {
-        let degrees = CGFloat(value) * 360
-        let startRotation = layer.value(forKeyPath: "transform.rotation")
-        let animation = CABasicAnimation(keyPath: "transform.rotation")
-        animation.duration = duration
-        animation.fromValue = startRotation
-        animation.toValue = CGFloat(startRotation as! Float) + DEGREES_TO_RADIANS(degrees)
-        animation.fillMode = kCAFillModeForwards
-        animation.isRemovedOnCompletion = false
-        layer.add(animation, forKey: "transform.rotation")
-    }
-    
     // add circle
     public func addOutlineCircle() {
         let center = CGPoint(x: frame.width / 2, y: frame.height / 2)
@@ -113,6 +101,21 @@ public class Dial: CALayer, ContinuousController, CompositeShapeType {
     }
 }
 
+extension Dial: ContinuousController {
+    
+    public func ramp(to value: Float, over duration: Double = 0) {
+        let degrees = CGFloat(value) * 360
+        let startRotation = layer.value(forKeyPath: "transform.rotation")
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.duration = duration
+        animation.fromValue = startRotation
+        animation.toValue = CGFloat(startRotation as! Float) + DEGREES_TO_RADIANS(degrees)
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        layer.add(animation, forKey: "transform.rotation")
+    }
+}
+
 // FIXME: This should remain private, removed when rotation is refactored out
 /**
  - TODO: Refactor as inits to and from degrees / radians
@@ -127,3 +130,4 @@ internal func DEGREES_TO_RADIANS(_ degrees: CGFloat) -> CGFloat {
 internal func RADIANS_TO_DEGREES(_ radians: CGFloat) -> CGFloat {
     return radians * (180.0 / CGFloat(M_PI))
 }
+

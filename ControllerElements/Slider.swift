@@ -11,13 +11,13 @@ import Color
 import PathTools
 import GraphicsTools
 
-public class Slider: CALayer, ContinuousController, CompositeShapeType {
+public class Slider: CALayer, CompositeShapeType {
     
     private let layer = CALayer()
     
     public var components: [CALayer] = []
     
-    private var indicator: CALayer!
+    fileprivate var indicator: CALayer!
     
     public var value: Float = 0.0 {
         
@@ -40,16 +40,6 @@ public class Slider: CALayer, ContinuousController, CompositeShapeType {
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func ramp(to value: Float, over duration: Double = 0) {
-        let animation = CABasicAnimation(keyPath: "position.y")
-        animation.duration = duration
-        animation.fromValue = indicator.position.y
-        animation.toValue = CGFloat(1 - value) * frame.height
-        animation.fillMode = kCAFillModeForwards
-        animation.isRemovedOnCompletion = false
-        indicator.add(animation, forKey: "position.y")
     }
     
     public func createComponents() {
@@ -76,11 +66,28 @@ public class Slider: CALayer, ContinuousController, CompositeShapeType {
     // TODO: Consider making this completely instance-level state, or completely local- !
     private func updateIndicatorPosition(value: Float) {
         CATransaction.setDisableActions(true)
-        indicator.frame.origin.y = CGFloat(1 - value) * frame.height
+        indicator.frame.origin.y = altitude(from: value)
         CATransaction.setDisableActions(false)
     }
 
     public func makeFrame() -> CGRect {
         return CGRect.zero
+    }
+    
+    private func altitude(from value: Float) -> CGFloat {
+        return CGFloat(1 - value) * frame.height
+    }
+}
+
+extension Slider: ContinuousController {
+    
+    public func ramp(to value: Float, over duration: Double = 0) {
+        let animation = CABasicAnimation(keyPath: "position.y")
+        animation.duration = duration
+        animation.fromValue = indicator.position.y
+        animation.toValue = CGFloat(1 - value) * frame.height
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        indicator.add(animation, forKey: "position.y")
     }
 }
