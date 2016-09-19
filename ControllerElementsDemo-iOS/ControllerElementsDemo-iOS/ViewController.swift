@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         s.position.x = 0.5 * view.frame.width
         s.position.y = 200
         
-        d.ramp(to: 0.75, over: 12)
+        s.ramp(to: 0.75, over: 12)
         
         view.layer.addSublayer(s)
     }

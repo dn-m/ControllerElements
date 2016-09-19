@@ -44,7 +44,14 @@ public class Slider: CALayer, ContinuousController, CompositeShapeType {
     }
     
     public func ramp(to value: Float, over duration: Double = 0) {
-        
+        let startAltitude = indicator.position.y
+        let animation = CABasicAnimation(keyPath: "position.y")
+        animation.duration = duration
+        animation.fromValue = startAltitude
+        animation.toValue = CGFloat(1 - value) * frame.height
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        indicator.add(animation, forKey: "position.y")
     }
     
     public func createComponents() {
