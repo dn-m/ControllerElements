@@ -74,7 +74,7 @@ public class Slider: CALayer, CompositeShapeType {
         return CGRect.zero
     }
     
-    private func altitude(from value: Float) -> CGFloat {
+    fileprivate func altitude(from value: Float) -> CGFloat {
         return CGFloat(1 - value) * frame.height
     }
 }
@@ -85,7 +85,7 @@ extension Slider: ContinuousController {
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = duration
         animation.fromValue = indicator.position.y
-        animation.toValue = CGFloat(1 - value) * frame.height
+        animation.toValue = altitude(from: value)
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         indicator.add(animation, forKey: "position.y")
