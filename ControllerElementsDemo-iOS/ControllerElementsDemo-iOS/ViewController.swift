@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         d.position = CGPoint(x: 100, y: 0.5 * view.frame.width)
         view.layer.addSublayer(d)
         
-        d.ramp(to: 0.75, over: 4)
+        d.ramp(to: 0.75, over: 20)
         
         s.position.x = 0.5 * view.frame.width
         s.position.y = 200
