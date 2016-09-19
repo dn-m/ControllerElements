@@ -11,7 +11,7 @@ import Color
 import PathTools
 import GraphicsTools
 
-public class Dial: CALayer, CompositeShapeType {
+public class Dial: CALayer, ContinuousController, CompositeShapeType {
     
     // Value between 0 and 1
     public let operationRange: Range<Float> = 0 ..< 1
