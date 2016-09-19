@@ -67,6 +67,8 @@ public class Dial: CALayer, CompositeShapeType {
         animation.duration = duration
         animation.fromValue = startRotation
         animation.toValue = CGFloat(startRotation as! Float) + DEGREES_TO_RADIANS(degrees)
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
         layer.add(animation, forKey: "transform.rotation")
     }
     
