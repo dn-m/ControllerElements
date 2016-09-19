@@ -60,7 +60,7 @@ public class Dial: CALayer, CompositeShapeType {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func ramp(to value: Float, over duration: Double) {
+    public func ramp(to value: Float, over duration: Double = 0) {
         let degrees = CGFloat(value) * 360
         let startRotation = layer.value(forKeyPath: "transform.rotation")
         let animation = CABasicAnimation(keyPath: "transform.rotation")
