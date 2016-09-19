@@ -42,6 +42,10 @@ public class Slider: CALayer, CompositeShapeType {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func ramp(to value: Float, over duration: Double = 0) {
+        
+    }
+    
     public func createComponents() {
         addOutline()
         addIndicator()
