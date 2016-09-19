@@ -11,6 +11,8 @@
 		0745479A1D8D906000346242 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074547981D8D906000346242 /* Slider.swift */; };
 		0748D2B81D8B33E300EF65A2 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748D2B71D8B33E300EF65A2 /* Dial.swift */; };
 		0748D2B91D8B33E300EF65A2 /* Dial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748D2B71D8B33E300EF65A2 /* Dial.swift */; };
+		0767870F1D903F9A0029ACB2 /* ContinuousController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0767870E1D903F9A0029ACB2 /* ContinuousController.swift */; };
+		076787101D903F9A0029ACB2 /* ContinuousController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0767870E1D903F9A0029ACB2 /* ContinuousController.swift */; };
 		0AF6BE64880B86B9B7A9919E /* Color.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF026CBA4A31BDC0E851097 /* Color.framework */; };
 		0E2D285CAF3D49EF8307A692 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54956BF34C708C1499DBDE2 /* Foundation.framework */; };
 		2A8174721566A65073DC599D /* GraphicsTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9107F48B7A504C1A2F22D550 /* GraphicsTools.framework */; };
@@ -71,6 +73,7 @@
 		05F99510C981B33882BF9DAF /* ControllerElements.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = ControllerElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		074547981D8D906000346242 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slider.swift; path = ControllerElements/Slider.swift; sourceTree = "<group>"; };
 		0748D2B71D8B33E300EF65A2 /* Dial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dial.swift; path = ControllerElements/Dial.swift; sourceTree = "<group>"; };
+		0767870E1D903F9A0029ACB2 /* ContinuousController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContinuousController.swift; path = ControllerElements/ContinuousController.swift; sourceTree = "<group>"; };
 		0B350030EB0FD3A999274CD6 /* PathTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathTools.framework; path = Carthage/Build/iOS/PathTools.framework; sourceTree = "<group>"; };
 		0FF026CBA4A31BDC0E851097 /* Color.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Color.framework; path = Carthage/Build/iOS/Color.framework; sourceTree = "<group>"; };
 		0FF96B84556B55CAAF50DBE7 /* ControllerElementsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControllerElementsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +175,7 @@
 			children = (
 				2B53B54886E9874FF65904C5 /* Supporting Files */,
 				0748D2B71D8B33E300EF65A2 /* Dial.swift */,
+				0767870E1D903F9A0029ACB2 /* ContinuousController.swift */,
 				074547981D8D906000346242 /* Slider.swift */,
 			);
 			name = ControllerElements;
@@ -397,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0745479A1D8D906000346242 /* Slider.swift in Sources */,
+				076787101D903F9A0029ACB2 /* ContinuousController.swift in Sources */,
 				0748D2B91D8B33E300EF65A2 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				074547991D8D906000346242 /* Slider.swift in Sources */,
+				0767870F1D903F9A0029ACB2 /* ContinuousController.swift in Sources */,
 				0748D2B81D8B33E300EF65A2 /* Dial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
