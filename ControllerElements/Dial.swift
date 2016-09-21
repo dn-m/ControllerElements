@@ -20,7 +20,6 @@ public class Dial: CALayer, CompositeShapeType {
     
     public var value: Float = 0.0 {
         
-        // TODO: refactor this as method: updateRotation()
         didSet {
             guard value >= 0.0 && value <= 1.0 else { return }
             updateRotation(value: value)
