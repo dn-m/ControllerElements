@@ -81,13 +81,19 @@ public class Slider: CALayer, CompositeShapeType {
 
 extension Slider: ContinuousController {
     
-    public func ramp(to value: Float, over duration: Double = 0) {
+    public func ramp(to newValue: Float, over duration: Double = 0) {
+        
+        print("ramp to: \(newValue); indicator.position: \(indicator.position.y)")
+        
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = duration
-        animation.fromValue = indicator.position.y
-        animation.toValue = altitude(from: value)
+        animation.fromValue = altitude(from: value)
+        animation.toValue = altitude(from: newValue)
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         indicator.add(animation, forKey: "position.y")
+        
+        // update instance-level property `value`
+        self.value = newValue
     }
 }
