@@ -81,9 +81,6 @@ public class Slider: CALayer, CompositeShapeType {
 extension Slider: ContinuousController {
     
     public func ramp(to newValue: Float, over duration: Double = 0) {
-        
-        print("ramp to: \(newValue); indicator.position: \(indicator.position.y)")
-        
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = duration
         animation.fromValue = altitude(from: value)
