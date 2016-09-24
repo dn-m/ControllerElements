@@ -50,7 +50,7 @@ public class Slider: CALayer, CompositeShapeType {
     
     public func addOutline() {
         borderWidth = 1
-        borderColor = Color(gray: 0, alpha: 1).cgColor
+        borderColor = Color(gray: 0.5, alpha: 1).cgColor
     }
     
     public func addIndicator() {
@@ -58,7 +58,7 @@ public class Slider: CALayer, CompositeShapeType {
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         shape.lineWidth = 1
-        shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
+        shape.strokeColor = Color(gray: 0.5, alpha: 1).cgColor
         layer.addSublayer(shape)
         indicator = shape
     }
