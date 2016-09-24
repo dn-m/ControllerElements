@@ -83,7 +83,7 @@ extension Slider: ContinuousController {
     public func ramp(to newValue: Float, over duration: Double = 0) {
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: "EaseInEaseOut")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         animation.fromValue = altitude(from: value)
         animation.toValue = altitude(from: newValue)
         animation.fillMode = kCAFillModeForwards
