@@ -1,8 +1,8 @@
 # ControllerElements
 
-[![Build Status](https://travis-ci.org/dn-m/DictionaryTools.svg?branch=master)](https://travis-ci.org/dn-m/ControllerElements)
+[![Build Status](https://travis-ci.org/dn-m/ControllerElements.svg?branch=master)](https://travis-ci.org/dn-m/ControllerElements)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
-[![GitHub version](https://badge.fury.io/gh/dn-m%2FDictionaryTools.svg)](https://badge.fury.io/gh/dn-m%2FControllerElements)
+[![GitHub version](https://badge.fury.io/gh/dn-m%2FControllerElements.svg)](https://badge.fury.io/gh/dn-m%2FControllerElements)
 
 <a name="integration"></a>
 ## Integration
