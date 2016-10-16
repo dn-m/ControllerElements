@@ -19,6 +19,10 @@ public class Slider: CALayer, CompositeShapeType {
     
     fileprivate var indicator: CALayer!
     
+    public var label: String = ""
+    
+    private var slotHeight: CGFloat { return frame.height - 20 }
+    
     public var value: Float = 0.0 {
         
         didSet {
@@ -31,9 +35,10 @@ public class Slider: CALayer, CompositeShapeType {
         super.init()
     }
     
-    public init(frame: CGRect) {
+    public init(frame: CGRect, label: String = "") {
         super.init()
         self.frame = frame
+        self.label = label
         createComponents()
         updateIndicatorPosition(value: value)
     }
@@ -43,23 +48,46 @@ public class Slider: CALayer, CompositeShapeType {
     }
     
     public func createComponents() {
-        addOutline()
-        addIndicator()
+        createSlot()
+        createIndicator()
+        createLabel()
         addSublayer(layer)
     }
     
-    public func addOutline() {
-        borderWidth = 1
-        borderColor = Color(gray: 0.5, alpha: 1).cgColor
+    public func createSlot() {
+        let slotWidth = 0.382 * frame.width
+        let left = 0.5 * (frame.width - slotWidth)
+        let rect = Path.rectangle(rectangle: CGRect(x: left, y: 0, width: slotWidth, height: slotHeight))
+        let rectLayer = CAShapeLayer()
+        rectLayer.path = rect.cgPath
+        rectLayer.lineWidth = 1
+        rectLayer.strokeColor = Color(gray: 0.5, alpha: 1).cgColor
+        rectLayer.fillColor = nil
+        layer.addSublayer(rectLayer)
     }
     
-    public func addIndicator() {
+    public func createIndicator() {
         let path = Path.rectangle(rectangle: CGRect(x: 0, y: 0, width: frame.width, height: 2))
         let shape = CAShapeLayer()
         shape.path = path.cgPath
-        shape.fillColor = Color(gray: 0.5, alpha: 1).cgColor
+        shape.fillColor = Color.red.cgColor
         layer.addSublayer(shape)
         indicator = shape
+    }
+    
+    private func createLabel() {
+        let labelLayer = CATextLayer()
+        labelLayer.string = label
+        labelLayer.fontSize = 10
+        labelLayer.foregroundColor = Color(gray: 0.5, alpha: 1).cgColor
+        labelLayer.font = CGFont("Helvetica" as CFString)
+        labelLayer.frame = CGRect(x: 0, y: slotHeight, width: frame.width, height: 20)
+        
+        // FIXME: Create platform agnostic solution to pixelation of Text
+        //labelLayer.contentsScale = UIScreen.main.scale
+        //labelLayer.contentsScale = NSScreen.main.scale
+        
+        addSublayer(labelLayer)
     }
     
     // TODO: Consider making this completely instance-level state, or completely local- !
@@ -74,7 +102,7 @@ public class Slider: CALayer, CompositeShapeType {
     }
     
     fileprivate func altitude(from value: Float) -> CGFloat {
-        return CGFloat(1 - value) * frame.height
+        return CGFloat(1 - value) * slotHeight
     }
 }
 
