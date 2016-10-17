@@ -64,7 +64,7 @@ public class Dial: CALayer, CompositeShapeType {
         shape.path = path.cgPath
         shape.lineWidth = 1
         shape.strokeColor = Color(gray: 0.4, alpha: 1).cgColor
-        shape.fillColor = Color(gray: 0.9, alpha: 1).cgColor
+        shape.fillColor = Color(gray: 0, alpha: 1).cgColor
         addSublayer(shape)
     }
     
@@ -75,8 +75,8 @@ public class Dial: CALayer, CompositeShapeType {
             .addLine(to: CGPoint(x: 0.5 * frame.width, y: frame.height))
         let shape = CAShapeLayer()
         shape.path = path.cgPath
-        shape.lineWidth = 1
-        shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
+        shape.lineWidth = 2
+        shape.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
         layer.addSublayer(shape)
     }
     
