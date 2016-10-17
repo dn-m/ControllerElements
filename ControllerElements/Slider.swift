@@ -25,11 +25,12 @@ public class Slider: CALayer, CompositeShapeType {
     
     fileprivate var indicator: CALayer!
     
+    fileprivate var indicatorHeight: CGFloat { return 0.0382 * slotHeight }
+    
     public var label: String = ""
     
     public var slotHeight: CGFloat { return frame.height - labelHeight }
     private var labelHeight: CGFloat { return 0.1 * frame.height }
-    
     
     public var value: Float = 0.0 {
         
@@ -70,7 +71,7 @@ public class Slider: CALayer, CompositeShapeType {
         rectLayer.path = rect.cgPath
         rectLayer.lineWidth = 1
         rectLayer.strokeColor = Color(gray: 0.5, alpha: 1).cgColor
-        rectLayer.fillColor = nil
+        rectLayer.fillColor = Color(gray: 0, alpha: 1).cgColor
         layer.addSublayer(rectLayer)
     }
     
@@ -81,7 +82,7 @@ public class Slider: CALayer, CompositeShapeType {
                 x: 0.5 * (frame.width - width),
                 y: 0,
                 width: width,
-                height: 0.0382 * slotHeight
+                height: indicatorHeight
             )
         )
         let shape = CAShapeLayer()
@@ -101,7 +102,7 @@ public class Slider: CALayer, CompositeShapeType {
         labelLayer.fontSize = 15
         labelLayer.foregroundColor = Color(gray: 0.5, alpha: 1).cgColor
         labelLayer.font = CGFont("Helvetica" as CFString)
-        labelLayer.frame = CGRect(x: 0, y: slotHeight, width: frame.width, height: labelHeight)
+        labelLayer.frame = CGRect(x: 0, y: slotHeight + 5, width: frame.width, height: labelHeight)
         labelLayer.alignmentMode = kCAAlignmentCenter
         
         #if os(iOS)
@@ -116,7 +117,7 @@ public class Slider: CALayer, CompositeShapeType {
     // TODO: Consider making this completely instance-level state, or completely local- !
     private func updateIndicatorPosition(value: Float) {
         CATransaction.setDisableActions(true)
-        indicator.frame.origin.y = altitude(from: value)
+        indicator.frame.origin.y = altitude(from: value) - 0.5 * indicatorHeight
         CATransaction.setDisableActions(false)
     }
 
@@ -132,13 +133,15 @@ public class Slider: CALayer, CompositeShapeType {
 extension Slider: ContinuousController {
     
     public func ramp(to newValue: Float, over duration: Double = 0) {
+        
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = duration
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        animation.fromValue = altitude(from: value)
-        animation.toValue = altitude(from: newValue)
+        animation.fromValue = altitude(from: value) - 0.5 * indicatorHeight
+        animation.toValue = altitude(from: newValue) - 0.5 * indicatorHeight
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
+        
         indicator.add(animation, forKey: "position.y")
         
         // update instance-level property `value`

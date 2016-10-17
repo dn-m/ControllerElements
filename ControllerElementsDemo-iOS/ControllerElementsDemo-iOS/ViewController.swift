@@ -25,10 +25,9 @@ class ViewController: UIViewController {
         s.position.x = 0.5 * view.frame.width
         s.position.y = 200
         
-        s.ramp(to: 1, over: 3)
+        s.ramp(to: 1, over: 10)
         
         view.layer.addSublayer(s)
-        
     }
 
     override func didReceiveMemoryWarning() {
