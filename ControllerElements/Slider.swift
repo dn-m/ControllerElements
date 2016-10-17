@@ -27,8 +27,9 @@ public class Slider: CALayer, CompositeShapeType {
     
     public var label: String = ""
     
+    public var slotHeight: CGFloat { return frame.height - labelHeight }
     private var labelHeight: CGFloat { return 0.1 * frame.height }
-    private var slotHeight: CGFloat { return frame.height - labelHeight }
+    
     
     public var value: Float = 0.0 {
         
@@ -61,7 +62,7 @@ public class Slider: CALayer, CompositeShapeType {
         addSublayer(layer)
     }
     
-    public func createSlot() {
+    private func createSlot() {
         let slotWidth = 0.382 * frame.width
         let left = 0.5 * (frame.width - slotWidth)
         let rect = Path.rectangle(rectangle: CGRect(x: left, y: 0, width: slotWidth, height: slotHeight))
@@ -73,7 +74,7 @@ public class Slider: CALayer, CompositeShapeType {
         layer.addSublayer(rectLayer)
     }
     
-    public func createIndicator() {
+    private func createIndicator() {
         let width = 0.75 * frame.width
         let path = Path.rectangle(
             rectangle: CGRect(
