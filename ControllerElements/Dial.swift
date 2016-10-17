@@ -23,6 +23,8 @@ public class Dial: CALayer, CompositeShapeType {
         }
     }
     
+    public var operatingInterval: (Float, Float) = (0.0, 1.0)
+    
     /// Components that need to built and commited
     public var components: [CALayer] = []
     
@@ -46,7 +48,8 @@ public class Dial: CALayer, CompositeShapeType {
         super.init()
     }
     
-    public init(frame: CGRect) {
+    public init(frame: CGRect, operatingInterval: (Float, Float) = (0.0, 1.0)) {
+        self.operatingInterval = operatingInterval
         super.init()
         self.frame = frame
         createComponents()
@@ -82,7 +85,7 @@ public class Dial: CALayer, CompositeShapeType {
     
     private func updateRotation(value: Float) {
         
-        let degrees = CGFloat(value) * 360
+        let degrees = CGFloat(position(from: value)) * 360
         let transform = rotationTransform(degrees: degrees)
         
         CATransaction.setDisableActions(true)
@@ -91,13 +94,18 @@ public class Dial: CALayer, CompositeShapeType {
     }
     
     fileprivate func rotation(from value: Float) -> CGFloat {
-        return CGFloat(value) * 360
+        return CGFloat(position(from: value)) * 360
     }
     
     private func rotationTransform(degrees: CGFloat) -> CGAffineTransform {
         var transform = CGAffineTransform.identity
         transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
         return transform
+    }
+    
+    private func position(from value: Float) -> Float {
+        let range = operatingInterval.1 - operatingInterval.0
+        return range * value + operatingInterval.0
     }
 }
 
