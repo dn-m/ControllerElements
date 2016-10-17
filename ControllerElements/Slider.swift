@@ -74,7 +74,15 @@ public class Slider: CALayer, CompositeShapeType {
     }
     
     public func createIndicator() {
-        let path = Path.rectangle(rectangle: CGRect(x: 0, y: 0, width: frame.width, height: 2))
+        let width = 0.75 * frame.width
+        let path = Path.rectangle(
+            rectangle: CGRect(
+                x: 0.5 * (frame.width - width),
+                y: 0,
+                width: width,
+                height: 0.0382 * slotHeight
+            )
+        )
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         shape.fillColor = Color.red.cgColor
