@@ -87,6 +87,7 @@ public class Slider: CALayer, CompositeShapeType {
         )
         let shape = CAShapeLayer()
         shape.path = path.cgPath
+        shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
         shape.fillColor = Color.red.cgColor
         layer.addSublayer(shape)
         indicator = shape
