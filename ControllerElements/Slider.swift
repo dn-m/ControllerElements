@@ -101,7 +101,7 @@ public class Slider: CALayer, CompositeShapeType {
         // FIXME: Set as function of frame.height
         labelLayer.fontSize = 15
         labelLayer.foregroundColor = Color(gray: 0.5, alpha: 1).cgColor
-        labelLayer.font = CGFont("Helvetica" as CFString)
+        labelLayer.font = CGFont("AvenirNext-Medium" as CFString)
         labelLayer.frame = CGRect(x: 0, y: slotHeight + 5, width: frame.width, height: labelHeight)
         labelLayer.alignmentMode = kCAAlignmentCenter
         
